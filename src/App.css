@@ -1,0 +1,236 @@
+/* ------------------------------ */
+/*   RESET & BASE STYLE F1        */
+/* ------------------------------ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+    font-family: "Orbitron", sans-serif; /* parfait pour le style F1 futuriste */
+}
+
+body {
+    background: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+}
+
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* ------------------------------ */
+/*      INTRO + QUIZZ STRUCTURE   */
+/* ------------------------------ */
+
+.intro-container,
+.quizz-container {
+    text-align: center;
+    max-width: 700px;
+    width: 100%;
+    animation: fade-in 0.6s ease-out;
+}
+
+
+/* TITRES */
+.intro-title,
+.quizz-title {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #e10600; /* rouge F1 */
+}
+
+
+/* ------------------------------ */
+/*          INTRO BUTTON          */
+/* ------------------------------ */
+
+.intro-button {
+    background: #e10600;
+    padding: 14px 32px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 20px;
+    transition: 0.25s;
+    box-shadow: 0 0 15px rgba(225, 6, 0, 0.6);
+}
+
+.intro-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(225, 6, 0, 0.9);
+}
+
+
+/* ------------------------------ */
+/*         QUIZZ QUESTIONS        */
+/* ------------------------------ */
+
+.quizz-question-count {
+    font-size: 1.2rem;
+    opacity: 0.7;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.quizz-question {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.quizz-answers {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: slide-up 0.6s ease-out;
+}
+
+.quizz-answer-button {
+    background: #111;
+    padding: 14px 18px;
+    border-radius: 8px;
+    border: 2px solid #222;
+    color: white;
+    font-size: 1.1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.25s;
+    position: relative;
+}
+
+.quizz-answer-button:hover {
+    border-color: #e10600;
+    background: #1a1a1a;
+    transform: translateX(6px);
+}
+
+
+/* ------------------------------ */
+/*       RESULT / BEST DRIVER     */
+/* ------------------------------ */
+
+.quizz-bestclass {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.quizz-image {
+    display: block;
+    width: 260px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+    animation: zoom-in 0.5s ease-out;
+}
+
+.quizz-description {
+    font-size: 1.3rem;
+    text-align: center;
+    opacity: 0.85;
+    max-width: 600px;
+    margin: 10px auto 30px auto;
+    line-height: 1.4;
+}
+
+/* ------------------------------ */
+/*          RESTART BUTTON        */
+/* ------------------------------ */
+
+.quizz-button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 28px;
+    background: #e10600;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: 0.25s;
+    letter-spacing: 1px;
+}
+
+.quizz-button:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(225, 6, 0, 0.7);
+}
+
+/* ------------------------------ */
+/*          ANIMATIONS F1         */
+/* ------------------------------ */
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slide-up {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoom-in {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/* ------------------------------ */
+/*   OPTIONAL: LIGNES F1 STYLE    */
+/* ------------------------------ */
+
+.intro-container::before,
+.quizz-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 120%;
+    height: 4px;
+    background: linear-gradient(90deg, #e10600, transparent);
+    animation: speed-line 2s linear infinite;
+}
+
+@keyframes speed-line {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
