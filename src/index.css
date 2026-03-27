@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-inter: 'Inter', sans-serif;
+  --color-f1-red: #e10600;
+  --color-dark: #0a0a0a;
+  --color-card: #111111;
+  --color-card-hover: #1a1a1a;
+  --color-border: #222222;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-slide-up: slide-up 0.5s ease-out both;
+  --animate-zoom-in: zoom-in 0.5s ease-out both;
+}
+
+@layer base {
+  * {
+    user-select: none;
+    box-sizing: border-box;
+  }
+  body {
+    background-color: #0a0a0a;
+    color: white;
+    overflow-x: hidden;
+    font-family: 'Orbitron', sans-serif;
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoom-in {
+  from { transform: scale(0.75); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
